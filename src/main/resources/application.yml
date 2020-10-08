@@ -1,0 +1,18 @@
+debug: true
+
+# spring boot
+spring:
+  application.name: line-bot
+  profiles.active: dev
+
+# line config
+# https://github.com/line/line-bot-sdk-java/tree/master/line-bot-spring-boot
+line.bot:
+  handler.enabled: true
+  handler.path: /callback
+  channel-token: eHjCc45nGNBIwOWaz08yTDCNHGL+VVd2+jfffADCVr7mhw2tEsdaJVrWg1M/1kBIsbu4dRopC6++1OWxLDwnZW7Rzn63vfy0yxOIt4qzQyyi8Q4D7c78lJ8vQYsKmAFwIwBVB633ENWnph1qSaw2wQdB04t89/1O/w1cDnyilFU=
+  channel-secret: 2e80f8a2da346c66fc8ab6c24d0eaa7e
+  channelTokenSupplyMode: fixed
+  connectTimeout: 60000
+  readTimeout: 60000
+  writeTimeout: 60000
