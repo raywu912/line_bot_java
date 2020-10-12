@@ -37,7 +37,7 @@ public class TestBotController {
 		Iterator<Map<String, Object>> itr;
 		switch(event.getMessage().getText()) {
 			case "1":
-				sql.append(" WHERE id=?");
+				sql.append(" WHERE id=1");
 				list = jdbcTemplate.queryForList(sql.toString(),event.getMessage().getText());
 				itr = list.iterator();
 				while (itr.hasNext()) {
@@ -46,7 +46,7 @@ public class TestBotController {
 				}
 				break;
 			case "2":
-				sql.append(" WHERE id=?");
+				sql.append(" WHERE id=2");
 				list = jdbcTemplate.queryForList(sql.toString(),event.getMessage().getText());
 				itr = list.iterator();
 				while (itr.hasNext()) {
