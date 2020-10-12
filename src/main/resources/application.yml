@@ -4,6 +4,11 @@ debug: true
 spring:
   application.name: line-bot
   profiles.active: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgres://tnrrjpyzuhlkfp:73e33214c24cbae8bf31195f12994b9c6391e3caa61de12b015262f781e19ed0@ec2-107-22-241-205.compute-1.amazonaws.com:5432/d6mi6s4604fkkb
+    username: tnrrjpyzuhlkfp
+    password: 73e33214c24cbae8bf31195f12994b9c6391e3caa61de12b015262f781e19ed0
 
 # line config
 # https://github.com/line/line-bot-sdk-java/tree/master/line-bot-spring-boot
