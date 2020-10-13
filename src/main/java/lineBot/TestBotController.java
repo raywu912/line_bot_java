@@ -1,9 +1,5 @@
 package lineBot;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -30,18 +26,18 @@ public class TestBotController {
 	//回覆訊息
 	@EventMapping
 	public TextMessage handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
-		StringBuilder sql = new StringBuilder();
-		sql.append(" SELECT CONTENT");
-		sql.append(" FROM EMAIL_INFO");
-		sql.append(" WHERE ID='fc1d6589-3f12-4ba2-b3dd-ee06bc94ff50'");
-		List<Map<String, Object>> list;
-		Iterator<Map<String, Object>> itr;
-		list = jdbcTemplate.queryForList(sql.toString());
-		itr = list.iterator();
-		while (itr.hasNext()) {
-			Map itemMap = itr.next();
-			returntext = itemMap.get("CONTENT").toString();
-		}
+//		StringBuilder sql = new StringBuilder();
+//		sql.append(" SELECT CONTENT");
+//		sql.append(" FROM EMAIL_INFO");
+//		sql.append(" WHERE ID='fc1d6589-3f12-4ba2-b3dd-ee06bc94ff50'");
+//		List<Map<String, Object>> list;
+//		Iterator<Map<String, Object>> itr;
+//		list = jdbcTemplate.queryForList(sql.toString());
+//		itr = list.iterator();
+//		while (itr.hasNext()) {
+//			Map itemMap = itr.next();
+//			returntext = itemMap.get("CONTENT").toString();
+//		}
 //		switch(event.getMessage().getText()) {
 //			case "1":
 //				sql.append(" WHERE id=1");
@@ -65,6 +61,7 @@ public class TestBotController {
 //				returntext = "沒資料唷";
 //				break;
 //		}
+		returntext="HHHHHH";
 		return new TextMessage(returntext);
 	}
 	
