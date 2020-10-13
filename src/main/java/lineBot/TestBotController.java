@@ -31,33 +31,40 @@ public class TestBotController {
 	@EventMapping
 	public TextMessage handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
 		StringBuilder sql = new StringBuilder();
-		sql.append(" SELECT user_name");
-		sql.append(" FROM test_user");
+		sql.append(" SELECT CONTENT");
+		sql.append(" FROM EMAIL_INFO");
+		sql.append(" WHERE ID='fc1d6589-3f12-4ba2-b3dd-ee06bc94ff50'");
 		List<Map<String, Object>> list;
 		Iterator<Map<String, Object>> itr;
-		switch(event.getMessage().getText()) {
-			case "1":
-				sql.append(" WHERE id=1");
-				list = jdbcTemplate.queryForList(sql.toString(),event.getMessage().getText());
-				itr = list.iterator();
-				while (itr.hasNext()) {
-					Map itemMap = itr.next();
-					returntext = itemMap.get("user_name").toString();
-				}
-				break;
-			case "2":
-				sql.append(" WHERE id=2");
-				list = jdbcTemplate.queryForList(sql.toString(),event.getMessage().getText());
-				itr = list.iterator();
-				while (itr.hasNext()) {
-					Map itemMap = itr.next();
-					returntext = itemMap.get("user_name").toString();
-				}
-				break;
-			default:
-				returntext = "沒資料唷";
-				break;
+		list = jdbcTemplate.queryForList(sql.toString(),event.getMessage().getText());
+		itr = list.iterator();
+		while (itr.hasNext()) {
+			Map itemMap = itr.next();
+			returntext = itemMap.get("CONTENT").toString();
 		}
+//		switch(event.getMessage().getText()) {
+//			case "1":
+//				sql.append(" WHERE id=1");
+//				list = jdbcTemplate.queryForList(sql.toString(),event.getMessage().getText());
+//				itr = list.iterator();
+//				while (itr.hasNext()) {
+//					Map itemMap = itr.next();
+//					returntext = itemMap.get("user_name").toString();
+//				}
+//				break;
+//			case "2":
+//				sql.append(" WHERE id=2");
+//				list = jdbcTemplate.queryForList(sql.toString(),event.getMessage().getText());
+//				itr = list.iterator();
+//				while (itr.hasNext()) {
+//					Map itemMap = itr.next();
+//					returntext = itemMap.get("user_name").toString();
+//				}
+//				break;
+//			default:
+//				returntext = "沒資料唷";
+//				break;
+//		}
 		return new TextMessage(returntext);
 	}
 	

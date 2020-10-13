@@ -6,9 +6,13 @@ spring:
   profiles.active: dev
   datasource:
     #driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://tnrrjpyzuhlkfp:73e33214c24cbae8bf31195f12994b9c6391e3caa61de12b015262f781e19ed0@ec2-107-22-241-205.compute-1.amazonaws.com:5432/d6mi6s4604fkkb
-    username: tnrrjpyzuhlkfp
-    password: 73e33214c24cbae8bf31195f12994b9c6391e3caa61de12b015262f781e19ed0
+    #url: jdbc:postgresql://tnrrjpyzuhlkfp:73e33214c24cbae8bf31195f12994b9c6391e3caa61de12b015262f781e19ed0@ec2-107-22-241-205.compute-1.amazonaws.com:5432/d6mi6s4604fkkb
+    #username: tnrrjpyzuhlkfp
+    #password: 73e33214c24cbae8bf31195f12994b9c6391e3caa61de12b015262f781e19ed0
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:oracle:thin:@10.1.1.143:1521:spectra
+    username: webris
+    password: sirbew
 
 # line config
 # https://github.com/line/line-bot-sdk-java/tree/master/line-bot-spring-boot
